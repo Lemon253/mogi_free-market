@@ -24,6 +24,17 @@
                 mogitate
             </a>
         </div>
+        @if (Auth::check())
+        <form class="form" action="/logout" method="post">
+            @csrf
+            <button class="form__button-submit" type="submit">ログアウト</button>
+        </form>
+        @else
+        <form action="/login" class="form">
+            @csrf
+            <button class="form__button-submit" type="submit">ログイン</button>
+        </form>
+        @endif
     </header>
     <main>
         @yield('content')
