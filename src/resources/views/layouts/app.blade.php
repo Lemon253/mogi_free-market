@@ -19,7 +19,7 @@
     <header class="header">
         <div class="header__inner">
             {{-- ロゴへのリンク --}}
-            <a href="{{ route('products.index') }}" class="header__logo">
+            <a href="{{ route('items.index') }}" class="header__logo">
                 {{-- ロゴのテキスト --}}
                 mogitate
             </a>
