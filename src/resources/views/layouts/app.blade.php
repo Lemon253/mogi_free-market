@@ -20,8 +20,8 @@
         <div class="header__inner">
             {{-- ロゴへのリンク --}}
             <a href="{{ route('items.index') }}" class="header__logo">
-                {{-- ロゴのテキスト --}}
-                mogitate
+                {{-- ロゴの画像 --}}
+                <img src="{{ asset('storage/img/logo.svg') }}" alt="ロゴ">
             </a>
         </div>
         @if (Auth::check())
