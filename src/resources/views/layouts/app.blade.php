@@ -14,7 +14,7 @@
 
 <body>
     <header class="header">
-        <div class="header__inner">
+        <div class="header__ttl">
             {{-- ロゴへのリンク --}}
             <a href="{{ route('items.index') }}" class="header__logo">
                 {{-- ロゴの画像 --}}
@@ -22,24 +22,31 @@
             </a>
         </div>
         {{-- 検索欄 --}}
-        <form class="search-form" action="{{ route('items.search') }}" method="get" data-search-term="{{ session('searches.search') }}">
+        {{-- <form class="search-form" action="{{ route('items.search') }}" method="get" data-search-term="{{ session('searches.search') }}"> --}}
+
+        <form class="search-form" action="" method="get">
             <div class="search-form__item">
                 <input class="search-form__item-input" type="text" name="search" id="search-input" placeholder="なにをお探しですか？" @if(session('searches.search')) value="{{ session('searches.search') }}" @endif />
-                @if (Auth::check())
-                <form class="form" action="/logout" method="post">
-                    @csrf
-                    <button class="form__button-submit" type="submit">ログアウト</button>
-                </form>
-                @else
-                <form class="form" action="/login" class="form">
-                    @csrf
-                    <button class="form__button-login" type="submit">ログイン</button>
-                </form>
-                @endif
-                <a href="" class="link_mypage">マイページ</a>
-                <a href="" class="link_sell">出品</a>
+            </div>
+        </form>
+        <div class="header__links">
+            @if (Auth::check())
+            <form class="form" action="/logout" method="post">
+                @csrf
+                <button class="form__button-submit" type="submit">ログアウト</button>
+            </form>
+            @else
+            <form class="form" action="/login" class="form">
+                @csrf
+                <button class="form__button-login" type="submit">ログイン</button>
+            </form>
+            @endif
+            <a href="" class="link_mypage">マイページ</a>
+            <a href="" class="link_sell">出品</a>
 
+        </div>
     </header>
+    
     <main>
         @yield('content')
     </main>

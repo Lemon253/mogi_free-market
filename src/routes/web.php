@@ -17,6 +17,7 @@ use App\Http\Controllers\AuthController;
 
 Route::get('/', [ItemController::class, 'index'])->name('items.index');
 Route::get('/login', [AuthController::class, 'login'])->name('login');
+//Route::get('/', [ItemController::class, 'search'])->name('items.search');
 
 //ログイン認証必須ページ
 Route::middleware('auth')->group(function () {
