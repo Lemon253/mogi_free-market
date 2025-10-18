@@ -9,9 +9,6 @@
     <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}">
     <link rel="stylesheet" href="{{ asset('css/common.css')}}">
     {{-- フォントの読み込み --}}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Story+Script&display=swap" rel="stylesheet">
     @yield('css')
 </head>
 
@@ -24,17 +21,24 @@
                 <img src="{{ asset('storage/img/logo.svg') }}" alt="ロゴ">
             </a>
         </div>
-        @if (Auth::check())
-        <form class="form" action="/logout" method="post">
-            @csrf
-            <button class="form__button-submit" type="submit">ログアウト</button>
-        </form>
-        @else
-        <form action="/login" class="form">
-            @csrf
-            <button class="form__button-submit" type="submit">ログイン</button>
-        </form>
-        @endif
+        {{-- 検索欄 --}}
+        <form class="search-form" action="{{ route('items.search') }}" method="get" data-search-term="{{ session('searches.search') }}">
+            <div class="search-form__item">
+                <input class="search-form__item-input" type="text" name="search" id="search-input" placeholder="なにをお探しですか？" @if(session('searches.search')) value="{{ session('searches.search') }}" @endif />
+                @if (Auth::check())
+                <form class="form" action="/logout" method="post">
+                    @csrf
+                    <button class="form__button-submit" type="submit">ログアウト</button>
+                </form>
+                @else
+                <form class="form" action="/login" class="form">
+                    @csrf
+                    <button class="form__button-login" type="submit">ログイン</button>
+                </form>
+                @endif
+                <a href="" class="link_mypage">マイページ</a>
+                <a href="" class="link_sell">出品</a>
+
     </header>
     <main>
         @yield('content')
