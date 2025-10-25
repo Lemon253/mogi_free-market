@@ -1,0 +1,25 @@
+.contents {
+    width: 100%;
+}
+
+.contents__header {
+    border-bottom: 2px solid black;
+    margin: 30px 0;
+}
+
+.header__tags {
+    margin: 0px 0px 10px 150px;
+}
+
+.recommendation {
+    text-decoration: none;
+    margin-right: 50px;
+}
+
+.my-list {
+    text-decoration: none;
+}
+
+.active-tab {
+    color: red;
+}

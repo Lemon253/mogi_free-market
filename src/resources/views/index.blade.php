@@ -16,6 +16,18 @@
 
 @section('content')
 {{-- コンテンツ --}}
+<div class="contents">
+    <div class="contents__header">
+        <div class="header__tags">
+            <a href="" class="recommendation">おすすめ</a>
+            {{-- <a href="{{ route('items.index') }}" class="recommendation @if($filter==='recommend' ) active-tag @endif">おすすめ</a> --}}
+
+            <a href="" class="my-list">マイリスト</a>
+            {{-- <a href="{{ route('item.index', ['tag' => 'mylist']) }}" class="my-list @if($filter === 'mylist') active-tag @endif">マイリスト</a> --}}
+
+        </div>
+    </div>
+</div>
 @endsection
 
 @section('scripts')
