@@ -20,7 +20,6 @@ class ItemsTableSeeder extends Seeder
             'id' => 1,
             'category_id' => 1,
             'brand_id' => 1,
-            'item_id' => 1,
             'item_name' => 'テスト',
             'description' => 'テスト',
             'price' => 1000,
