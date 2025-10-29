@@ -18,7 +18,7 @@
             {{-- ロゴへのリンク --}}
             <a href="{{ route('items.index') }}" class="header__logo">
                 {{-- ロゴの画像 --}}
-                <img src="{{ asset('storage/img/logo.svg') }}" alt="ロゴ">
+                <img src="{{ asset('storage/dummy/logo.svg') }}" alt="ロゴ">
             </a>
         </div>
         {{-- 検索欄 --}}
