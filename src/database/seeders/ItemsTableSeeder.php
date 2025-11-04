@@ -56,7 +56,7 @@ class ItemsTableSeeder extends Seeder
             'price' => 300,
             'shipping_fee' => 500,
             'status' => 'やや傷や汚れあり',
-            'image_path' => 'Onion.jpg',
+            'image_path' => 'Onions.jpg',
             'created_at' => now(),
             'updated_at' => now(),
         ];
