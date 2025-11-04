@@ -27,6 +27,22 @@
 
         </div>
     </div>
+    <div class="item-list">
+        @foreach ($items as $item)
+        <div class="item">
+            {{-- 画像にリンクを設定（まだ未設定） --}}
+            <a href="" class="item__link">
+                <div class="item__image">
+                    {{-- 画像のurl指定 --}}
+                    <img src="{{ asset('storage/dummy/' . $item->image_path)}}" />
+                    
+                    {{-- 確認用 --}}
+                    {{--<img src="{{ asset('storage/dummy/Clock.jpg') }}" />--}}
+                </div>
+            </a>
+        </div>
+        @endforeach
+    </div>
 </div>
 @endsection
 
