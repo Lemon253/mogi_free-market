@@ -4,7 +4,7 @@
 
 .contents__header {
     border-bottom: 2px solid black;
-    margin: 30px 0;
+    margin-top: 30px;
 }
 
 .header__tags {
@@ -22,4 +22,50 @@
 
 .active-tab {
     color: red;
+}
+
+.item-list {
+    display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        gap:2%;
+        margin-left: 4%;
+        
+
+}
+
+/* 商品カードのスタイル */
+.item {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); */
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    margin: 4% 2% 0 0;
+}
+
+/* .item:nth-child(4n) {
+    margin-right: 0;
+} */
+
+.item__image {
+    /* 画像をカードの上部に配置し、残りのスペースはコンテンツに割り当てる */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.item__name {
+    font-size: 20px;
+    margin-top: 4px;
 }
