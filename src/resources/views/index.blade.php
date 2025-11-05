@@ -35,11 +35,12 @@
                 <div class="item__image">
                     {{-- 画像のurl指定 --}}
                     <img src="{{ asset('storage/dummy/' . $item->image_path)}}" />
-                    
+
                     {{-- 確認用 --}}
                     {{--<img src="{{ asset('storage/dummy/Clock.jpg') }}" />--}}
                 </div>
             </a>
+            <div class="item__name">{{ $item->item_name }}</div>
         </div>
         @endforeach
     </div>
