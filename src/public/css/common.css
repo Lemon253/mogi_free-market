@@ -23,7 +23,7 @@
     display: flex;
 }
 
-.form {
+.logout, .login {
     margin: 0;
     padding: 20px 10px 10px 10px;
 }
