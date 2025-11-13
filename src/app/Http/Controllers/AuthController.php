@@ -27,7 +27,8 @@ class AuthController extends Controller
         // または、非同期で処理する場合 (Queue workerが稼働している必要あり)
         // Mail::to($recipientEmail)->queue(new TestMail()); 
 
-        return view('auth.mail', [
+        //メール送信後に表示する画面とメールの内容
+        return view('auth.confirm', [
             'recipient' => $recipientEmail
         ])->with('status', 'テストメールを送信しました。MailtrapのInboxを確認してください。');
     }
