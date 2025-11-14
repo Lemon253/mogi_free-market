@@ -1,0 +1,22 @@
+.mail-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mail-content__button {
+
+}
+
+.button-navigation {
+    text-decoration: none;
+    width: 10px;
+    background-color: gray;
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 3px;
+    padding: 10px;
+    margin: 15px 20px 10px 10px;
+    text-align: center;
+    width: 70px;
+}
