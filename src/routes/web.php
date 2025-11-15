@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\AuthController;
-
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,15 +18,19 @@ use App\Http\Controllers\AuthController;
 
 Route::get('/', [ItemController::class, 'index'])->name('items.index');
 Route::get('/login', [AuthController::class, 'login'])->name('login');
+
 //Route::get('/', [ItemController::class, 'search'])->name('items.search');
 
 // GETリクエストでアクセスするだけでメールを送信するルート（テスト用）
-Route::get('/send-email', [AuthController::class, 'sendTestEmail']);
-// フォーム送信（POST）でメールを送信するルートの例
-// Route::post('/contact', [EmailController::class, 'sendContactEmail']);
+//Route::get('/test-send-email', [AuthController::class, 'sendTestEmail']);
 
+// フォーム送信（POST）でメールを送信するルートの例
+Route::post('/send-email', [AuthController::class, 'sendTestEmail']);
 
 //ログイン認証必須ページ
 Route::middleware('auth')->group(function () {
+    // GETリクエストでアクセスするだけでメールを送信するルート（テスト用）
+    //Route::get('/send-email', [AuthController::class, 'sendTestEmail']);
+
     //Route::get('/', [AuthController::class, 'index']);
 });

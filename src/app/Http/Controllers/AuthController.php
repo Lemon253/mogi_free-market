@@ -15,6 +15,13 @@ class AuthController extends Controller
         return view('auth.login');
     }
 
+    //会員登録後の処理
+    public function store()
+    {
+        return view('auth.confirm');
+    }
+
+
     //メールの送信処理
     public function sendTestEmail()
     {
