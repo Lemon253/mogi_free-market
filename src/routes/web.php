@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', [ItemController::class, 'index'])->name('items.index');
 Route::get('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/register', [AuthController::class, 'register'])->name('register');
+Route::get('/register/success', [AuthController::class, 'success'])->name('success');
 
 //Route::get('/', [ItemController::class, 'search'])->name('items.search');
 
@@ -25,7 +27,7 @@ Route::get('/login', [AuthController::class, 'login'])->name('login');
 //Route::get('/test-send-email', [AuthController::class, 'sendTestEmail']);
 
 // フォーム送信（POST）でメールを送信するルートの例
-Route::post('/send-email', [AuthController::class, 'sendTestEmail']);
+//Route::post('/send-email', [AuthController::class, 'sendTestEmail']);
 
 //ログイン認証必須ページ
 Route::middleware('auth')->group(function () {

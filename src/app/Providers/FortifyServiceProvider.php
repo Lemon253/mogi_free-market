@@ -33,16 +33,6 @@ class FortifyServiceProvider extends ServiceProvider
     {
         Fortify::createUsersUsing(CreateNewUser::class);
 
-        Fortify::redirects(
-            // 登録成功時の処理を行うURL
-            '/send-email',
-            // ログイン成功時のリダイレクト先（変更なし）
-            config('fortify.home'),
-            // パスワードリセット成功時のリダイレクト先（変更なし）
-            config('fortify.home'),
-            // メール確認時のリダイレクト先（変更なし）
-            config('fortify.home'),
-        );
         Fortify::registerView(function () {
             return view('auth.register');
         });
