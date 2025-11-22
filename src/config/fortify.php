@@ -74,8 +74,8 @@ return [
     |
     */
 
-    'home' => RouteServiceProvider::HOME,
-
+    //'home' => RouteServiceProvider::HOME,
+    'home' => '/profile',
     /*
     |--------------------------------------------------------------------------
     | Fortify Routes Prefix / Subdomain
@@ -147,7 +147,7 @@ return [
     'features' => [
         Features::registration(),
         Features::resetPasswords(),
-         Features::emailVerification(),
+        Features::emailVerification(),
         Features::updateProfileInformation(),
         Features::updatePasswords(),
         Features::twoFactorAuthentication([
