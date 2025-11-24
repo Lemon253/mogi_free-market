@@ -36,7 +36,7 @@ Route::middleware('verified')->group(function () {
     // ★ Fortify認証成功後の遷移先 (config/fortify.phpで'/profile'に設定済み)
     // ユーザーはメール認証完了後、このルートにリダイレクトされます。
     Route::get('/profile', [AuthController::class, 'profile'])->name('profile');
+    Route::post('/profile', [ItemController::class, 'update'])->name('profile.update');
 
-    // その他の認証済みユーザー専用ルート（例: ダッシュボード、設定画面など）
 });
 

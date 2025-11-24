@@ -1,0 +1,118 @@
+
+
+.profile-content__ttl {
+    font-size: 18px;
+    font-family: 'Hiragino Kaku Gothic ProN';
+    color: #000;
+}
+
+.rprofile-content{
+    display: flex;
+    flex-direction: column;
+    /* フォーム内の要素を縦に並べる */
+}
+
+.form__ttl {
+    display: block;
+    /* ラベルを独立したブロック要素にする */
+    margin-bottom: 8px;
+}
+
+/* 入力欄とテキストエリア */
+.form__contents input[type="text"],
+.form__contents input[type="number"],
+.form__contents textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    /* パディングを幅に含める */
+}
+
+.form__contents input[type="file"] {
+    width: 100%;
+    padding: 12px 0;
+    border-radius: 4px;
+    /* パディングを幅に含める */
+}
+
+.item-image-container {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 15px;
+    /* border: 1px solid #ddd; */
+}
+
+
+.item-image-container img {
+    display: none;
+}
+
+
+/* コンテナが表示されているときに画像に適用されるスタイル */
+.is-visible img {
+    display: block;
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.select-button-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.file-label {
+    background-color: #eee;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.file-input {
+    display: none;
+}
+
+.file-name-display {
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.form__contents.button-group {
+    display: flex;
+    justify-content: flex-end;
+    /* ボタンを右端に寄せる */
+    gap: 15px;
+    /* ボタン間の余白 */
+    margin-top: 20px;
+}
+
+.button-register {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.button-register {
+    background-color: #ffc107;
+    color: #333;
+    padding: 12px 70px;
+}
+
+.form__error {
+    color: red;
+}
+
+.form__button {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
