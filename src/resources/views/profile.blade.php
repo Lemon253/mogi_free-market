@@ -19,8 +19,23 @@
         </div>
 
         <div class="form__contents">
-            <p class="from__ttl">商品名</p>
+            <p class="from__ttl">ユーザ名</p>
             <input type="text" id="name" name="name" value="{{ old('name') }}" placeholder="商品名を入力">
+        </div>
+
+        <div class="form__contents">
+            <p class="from__ttl">郵便番号</p>
+            <input type="tel" id="post-code" name="post-code" maxlength="7" pattern="\d{7}" value="{{ old('post-code') }}" placeholder="郵便番号を入力">
+        </div>
+
+        <div class="form__contents">
+            <p class="from__ttl">住所</p>
+            <input type="text" id="address" name="address" value="{{ old('address') }}" placeholder="住所を入力">
+        </div>
+
+        <div class="form__contents">
+            <p class="from__ttl">建物名</p>
+            <input type="text" id="building" name="building" value="{{ old('name') }}" placeholder="建物名を入力">
         </div>
 
 

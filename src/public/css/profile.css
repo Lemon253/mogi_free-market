@@ -1,14 +1,13 @@
-
-
 .profile-content__ttl {
     font-size: 18px;
     font-family: 'Hiragino Kaku Gothic ProN';
     color: #000;
 }
 
-.rprofile-content{
+.profile-content{
     display: flex;
     flex-direction: column;
+    align-items: center;
     /* フォーム内の要素を縦に並べる */
 }
 
@@ -18,10 +17,14 @@
     margin-bottom: 8px;
 }
 
+.profile-form {
+    width: 50%;
+}
+
 /* 入力欄とテキストエリア */
 .form__contents input[type="text"],
-.form__contents input[type="number"],
-.form__contents textarea {
+.form__contents input[type="tel"]
+{
     width: 100%;
     padding: 12px;
     border: 1px solid #ddd;
@@ -37,7 +40,7 @@
     /* パディングを幅に含める */
 }
 
-.item-image-container {
+.profile-image-container {
     width: 100%;
     overflow: hidden;
     margin-bottom: 15px;
@@ -45,7 +48,7 @@
 }
 
 
-.item-image-container img {
+.profile-image-container img {
     display: none;
 }
 
@@ -91,7 +94,7 @@
     margin-top: 20px;
 }
 
-.button-register {
+.button-update {
     padding: 12px 25px;
     border: none;
     border-radius: 4px;
@@ -100,7 +103,7 @@
     font-weight: bold;
 }
 
-.button-register {
+.button-update {
     background-color: #ffc107;
     color: #333;
     padding: 12px 70px;
