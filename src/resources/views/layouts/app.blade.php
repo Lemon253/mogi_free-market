@@ -42,11 +42,11 @@
             </form>
             @endif
             <a href="" class="link_mypage">マイページ</a>
-            <a href="" class="link_sell">出品</a>
+            <a href="{{ route('items.create') }}" class="link_sell">出品</a>
 
         </div>
     </header>
-    
+
     <main>
         @yield('content')
     </main>
