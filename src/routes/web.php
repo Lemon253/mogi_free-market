@@ -37,7 +37,7 @@ Route::middleware('verified')->group(function () {
     // ユーザーはメール認証完了後、このルートにリダイレクトされます。
     Route::get('/profile', [AuthController::class, 'profile'])->name('profile');
     Route::post('/profile', [ItemController::class, 'update'])->name('profile.update');
-    Route::get('/sell', [ItemController::class, 'sell']);
+    Route::get('/sell', [ItemController::class, 'sell'])->name('items.create');
     Route::post('/sell', [ItemController::class, 'register'])->name('items.register');
 });
 
