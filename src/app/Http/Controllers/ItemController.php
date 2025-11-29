@@ -23,9 +23,14 @@ class ItemController extends Controller
     //出品画面表示
     public function sell()
     {
-        // 全てのカテゴリーデータを取得
-        $categories = Category::all();
-        return view('sell', compact('categories'));
+        // ステータスの定義を配列として手動で定義
+        $statuses = [
+            1 => '良好',
+            2 => '目立った傷や汚れなし',
+            3 => 'やや傷や汚れあり',
+            4 => '状態が悪い',
+            
+        ];        return view('sell', compact('statuses'));
     }
 
     //商品登録処理

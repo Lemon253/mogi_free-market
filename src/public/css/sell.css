@@ -35,13 +35,47 @@
 /* 入力欄とテキストエリア */
 .form__contents input[type="text"],
 .form__contents input[type="number"],
-.form__contents textarea {
+.form__contents textarea,
+.form__contents select
+{
     width: 100%;
     padding: 12px;
     border: 1px solid #ddd;
     border-radius: 4px;
     box-sizing: border-box;
     /* パディングを幅に含める */
+    /* ↓ select要素特有の見た目をリセットし、スタイルを統一しやすくする */
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-color: #fff;
+        /* ↓ カスタムのドロップダウンアイコンのスペースを確保 */
+        padding-right: 30px;
+}
+
+/* セレクトボックスのコンテナにカスタムドロップダウンアイコンを追加するためのCSS */
+.form__input--text {
+    position: relative;
+}
+
+/* カスタムドロップダウンアイコンの追加 */
+.form__input--text select {
+    /* select要素が親要素のサイズにフィットするように設定 */
+    width: 100%;
+    /* ... 既存のスタイル ... */
+}
+
+.form__input--text::after {
+    content: '▼';
+    /* ドロップダウンアイコン */
+    font-size: 0.7rem;
+    color: #555;
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    /* クリックイベントがselect要素に伝わるようにする */
 }
 
 .form__contents input[type="file"] {
@@ -50,6 +84,7 @@
     border-radius: 4px;
     /* パディングを幅に含める */
 }
+
 
 .form__contents textarea {
     height: 120px;
@@ -139,7 +174,6 @@
     margin-top: 20px;
 }
 
-.button-back,
 .button-register {
     padding: 12px 25px;
     border: none;
@@ -147,16 +181,6 @@
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
-}
-
-.button-back {
-    background-color: #ddd;
-    color: #555;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    margin-right: 15px;
-    padding: 0 70px;
 }
 
 .button-register {

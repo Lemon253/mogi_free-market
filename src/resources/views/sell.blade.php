@@ -7,28 +7,9 @@
 @section('content')
 <div class="contents">
     <div class="register">
-        <p class="register__ttl">商品の出品</p>
+        <h1 class="register__ttl">商品の出品</h1>
         <form class="register__form" method="POST" action="{{ route('items.register') }}" enctype="multipart/form-data">
             @csrf
-            <div class="form__contents">
-                <p class="from__ttl">商品名<span class="required-mark">必須</span></p>
-                <input type="text" id="name" name="name" value="{{ old('name') }}" placeholder="商品名を入力">
-            </div>
-            <div class="form__error">
-                @error('name')
-                {{ $message }}
-                @enderror
-            </div>
-
-            <div class="form__contents">
-                <p class="form__ttl">値段<span class="required-mark">必須</span></p>
-                <input type="number" id="price" name="price" value="{{ old('price') }}" placeholder="値段を入力">
-            </div>
-            <div class="form__error">
-                @error('price')
-                {{ $message }}
-                @enderror
-            </div>
 
             <div class="form__contents">
                 <p class="form__ttl">商品画像<span class="required-mark">必須</span></p>
@@ -47,6 +28,18 @@
                 @enderror
             </div>
 
+            <h3 class="form__header">商品の詳細</h3>
+            <div class="form__contents">
+                <p class="from__ttl">カテゴリー<span class="required-mark">必須</span></p>
+                <input type="text" id="name" name="name" value="{{ old('name') }}" placeholder="商品名を入力">
+            </div>
+            <div class="form__error">
+                @error('name')
+                {{ $message }}
+                @enderror
+            </div>
+
+            {{-- ここを編集する --}}
             <div class="form__contents">
                 <p class="form__ttl">季節<span class="required-mark">必須</span><span class="required-mark--text">複数選択可</span></p>
                 <input type="checkbox" name="seasons[]" value="1" id="season-1" {{ in_array('1', old('seasons', [])) ? 'checked' : '' }}>
@@ -65,7 +58,52 @@
             </div>
 
             <div class="form__contents">
-                <p class="form__ttl">商品説明<span class="required-mark">必須</span></p>
+                <p class="from__ttl">商品の状態<span class="required-mark">必須</span></p>
+                <div class="form__input--text">
+                    <select name="status_id" required>
+                        <option value="" disabled {{ old('status_id') == '' ? 'selected' : '' }}>
+                            選択してください
+                        </option>
+                        @foreach($statuses as $status_id => $status)
+                        <option value="{{ $status_id }}" {{ old('status_id') == $status_id ? 'selected' : '' }}>
+                            {{ $status }}
+                        </option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+            <div class="form__error">
+                @error('status_id')
+                {{ $message }}
+                @enderror
+            </div>
+
+
+
+            <h3 class="form__header">商品名と説明</h3>
+            <div class="form__contents">
+                <p class="from__ttl">商品名<span class="required-mark">必須</span></p>
+                <input type="text" id="name" name="name" value="{{ old('name') }}" placeholder="商品名を入力">
+            </div>
+            <div class="form__error">
+                @error('name')
+                {{ $message }}
+                @enderror
+            </div>
+
+            <div class="form__contents">
+                <p class="from__ttl">ブランド名<span class="required-mark">必須</span></p>
+                <input type="text" id="name" name="name" value="{{ old('name') }}" placeholder="商品名を入力">
+            </div>
+            <div class="form__error">
+                @error('name')
+                {{ $message }}
+                @enderror
+            </div>
+
+
+            <div class="form__contents">
+                <p class="form__ttl">商品の説明<span class="required-mark">必須</span></p>
                 <textarea name="description" id="description" placeholder="商品の説明を入力">{{ old('description') }}</textarea>
             </div>
             <div class="form__error">
@@ -74,8 +112,18 @@
                 @enderror
             </div>
 
+            <div class="form__contents">
+                <p class="form__ttl">販売価格<span class="required-mark">必須</span></p>
+                <input type="number" id="price" name="price" value="{{ old('price') }}" placeholder="値段を入力">
+            </div>
+            <div class="form__error">
+                @error('price')
+                {{ $message }}
+                @enderror
+            </div>
+
             <div class="form__button">
-                <button type="submit" class="button-register">登録</button>
+                <button type="submit" class="button-register">出品する</button>
             </div>
         </form>
     </div>
