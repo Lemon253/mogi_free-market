@@ -30,7 +30,11 @@ class ItemController extends Controller
             3 => 'やや傷や汚れあり',
             4 => '状態が悪い',
             
-        ];        return view('sell', compact('statuses'));
+        ];
+
+        $categories = Category::all(); // 全てのカテゴリーデータを取得
+
+        return view('sell', compact('statuses', 'categories'));
     }
 
     //商品登録処理

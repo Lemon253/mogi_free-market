@@ -29,30 +29,40 @@
             </div>
 
             <h3 class="form__header">商品の詳細</h3>
-            <div class="form__contents">
-                <p class="from__ttl">カテゴリー<span class="required-mark">必須</span></p>
-                <input type="text" id="name" name="name" value="{{ old('name') }}" placeholder="商品名を入力">
-            </div>
-            <div class="form__error">
-                @error('name')
-                {{ $message }}
-                @enderror
-            </div>
-
             {{-- ここを編集する --}}
             <div class="form__contents">
-                <p class="form__ttl">季節<span class="required-mark">必須</span><span class="required-mark--text">複数選択可</span></p>
-                <input type="checkbox" name="seasons[]" value="1" id="season-1" {{ in_array('1', old('seasons', [])) ? 'checked' : '' }}>
-                <label for="season-1" class="checkbox-text">春</label>
-                <input type="checkbox" name="seasons[]" value="2" id="season-2" {{ in_array('2', old('seasons', [])) ? 'checked' : '' }}>
-                <label for="season-2" class="checkbox-text">夏</label>
-                <input type="checkbox" name="seasons[]" value="3" id="season-3" {{ in_array('3', old('seasons', [])) ? 'checked' : '' }}>
-                <label for="season-3" class="checkbox-text">秋</label>
-                <input type="checkbox" name="seasons[]" value="4" id="season-4" {{ in_array('4', old('seasons', [])) ? 'checked' : '' }}>
-                <label for="season-4" class="checkbox-text">冬</label>
+                <p class="form__ttl">カテゴリー<span class="required-mark">必須</span><span class="required-mark--text">複数選択可</span></p>
+                <div class="category-tags-container">
+                    @php
+                    // 以前の入力値（old('categories', [])）を保持するための処理
+                    $selectedCategories = old('categories', []);
+                    @endphp
+
+                    @foreach($categories as $category)
+                    @php $categoryId = $category->id;
+                    @endphp
+
+                    {{-- チェックボックス本体 (非表示) --}}
+                    <input
+                        type="checkbox"
+                        name="categories[]"
+                        value="{{ $categoryId }}"
+                        id="category-{{ $categoryId }}"
+                        class="hidden-checkbox"
+                        {{ in_array((string)$categoryId, $selectedCategories) ? 'checked' : '' }}>
+
+                    {{-- タグ状のラベル --}}
+                    <label
+                        for="category-{{ $categoryId }}"
+                        class="tag-label">
+                        {{ $category->category_name }}
+                    </label>
+                    @endforeach
+                </div>
             </div>
+
             <div class="form__error">
-                @error('seasons')
+                @error('categories')
                 {{ $message }}
                 @enderror
             </div>
