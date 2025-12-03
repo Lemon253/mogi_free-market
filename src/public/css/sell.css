@@ -32,6 +32,47 @@
     margin-bottom: 8px;
 }
 
+/* チェックボックス本体を完全に非表示にする */
+.hidden-checkbox {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+
+/* タグ状のラベルの基本スタイル */
+.tag-label {
+    padding: 8px 16px;
+    border: 2px solid #fca5a5;
+    /* 薄い赤系のボーダー */
+    border-radius: 9999px;
+    /* 角丸を最大限に */
+    color: #ef4444;
+    /* テキストカラーを赤系に */
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+    user-select: none;
+    flex-grow: 0;
+    text-align: center;
+}
+
+/* ホバー時のスタイル */
+.tag-label:hover {
+    background-color: #fee2e2;
+}
+
+/* チェックされた状態 */
+.hidden-checkbox:checked+.tag-label {
+    border-color: #ef4444;
+    background-color: #ef4444;
+    color: white;
+    box-shadow: 0 2px 4px rgba(239, 68, 68, 0.4);
+}
+
 /* 入力欄とテキストエリア */
 .form__contents input[type="text"],
 .form__contents input[type="number"],
@@ -123,12 +164,6 @@
     object-fit: cover;
 }
 
-.select-button-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
 .file-label {
     background-color: #eee;
     padding: 8px 12px;
@@ -147,22 +182,10 @@
     margin-bottom: 15px;
 }
 
-.checkbox-text {
-    margin-right: 30px;
-}
-
 .required-mark--text {
     font-size: 12px;
     color: red;
     margin-left: 8px;
-}
-
-/* 季節のチェックボックスを横並びにする */
-.form__contents-seasons {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    /* チェックボックス間の余白 */
 }
 
 .form__contents.button-group {
