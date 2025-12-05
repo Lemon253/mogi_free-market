@@ -13,13 +13,15 @@
 
             <div class="form__contents">
                 <p class="form__ttl">商品画像<span class="required-mark">必須</span></p>
-                <div class="item-image-container">
-                    <img src="#" alt="商品画像" class="preview-img" />
-                </div>
-                <div class="select-button-container">
-                    <label for="image" class="file-label">ファイルを選択</label>
-                    <input type="file" class="file-input" id="image" name="image">
-                    <span class="file-name-display"></span>
+                <div class="align-items">
+                    <div class="item-image-container">
+                        <img src="#" alt="商品画像" class="preview-img" />
+                    </div>
+                    <div class="select-button-container">
+                        <label for="image" class="file-label">ファイルを選択</label>
+                        <input type="file" class="file-input" id="image" name="image">
+                        <span class="file-name-display"></span>
+                    </div>
                 </div>
             </div>
             <div class="form__error">

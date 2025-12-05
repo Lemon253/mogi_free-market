@@ -32,6 +32,16 @@
     margin-bottom: 8px;
 }
 
+.align-items {
+    display: flex;
+    flex-direction: column;
+    /* background-color: white; */
+    padding: 30px 0;
+    border: solid;
+    align-items: center;
+}
+
+
 /* --- カテゴリタグのスタイル (画像デザイン) --- */
 .category-tags-container {
     display: flex;
@@ -182,11 +192,28 @@
 }
 
 .file-label {
-    background-color: #eee;
+    /* background-color: #eee;
     padding: 8px 12px;
     border-radius: 4px;
     cursor: pointer;
-    margin-bottom: 15px;
+    margin-bottom: 15px; */
+    padding: 8px 16px;
+    border: 2px solid #fca5a5;
+    /* 薄い赤系のボーダー */
+    border-radius: 9px;
+    /* 角丸を最大限に */
+    color: #ef4444;
+    /* テキストカラーを赤系に */
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+    user-select: none;
+    flex-grow: 0;
+    text-align: center;
+
+
 }
 
 .file-input {
